@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(120deg, #2980b9, #6dd5fa);
+}
+.container {
+    position: relative;
+    width: 700px;
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transform: translateX(0);
+    transition: transform 0.6s ease;
+}
+.form-container {
+    width: 50%;
+    padding: 40px;
+    transition: 0.5s;
+}
+.login-box, .register-box {
+    width: 100%;
+}
+.toggle-container {
+    width: 50%;
+    background: linear-gradient(120deg, #2980b9, #6dd5fa);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #aaa;
+    transition: 0.3s;
+}
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: 5px;
+    left: 10px;
+    font-size: 12px;
+    color: #2980b9;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+button:hover {
+    background: #6dd5fa;
+}
+.social-login {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.social-login button {
+    width: 50px;
+    height: 50px;
+    background: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.social-login button:hover {
+    background: #2980b9;
+}
+.social-login i {
+    font-size: 24px;
+}
+.hidden {
+    display: none;
+}
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.input-box i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #aaa;
+}
+/* New animations */
+.form-container {
+    animation: slideIn 0.6s ease-out;
+}
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+/* Sliding effect for login and register switch */
+.form-container.hidden {
+    animation: slideOut 0.6s ease-out;
+}
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+#center1{
+    text-align: center;
+}
